@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Excursion à Kisatu - IST/Boma</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* Reset */
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f4f8;
+      color: #222;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #0b6e4f;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #094c35;
+    }
+    
+    header {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    header h1 {
+      font-size: 3rem;
+      z-index: 1;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    header p {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      z-index: 1;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    }
+    header a.btn {
+      background-color: #0b6e4f;
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 5px 15px rgba(11,110,79,0.6);
+      transition: background-color 0.3s ease;
+      z-index: 1;
+    }
+    header a.btn:hover {
+      background-color: #094c35;
+    }
+    
+    main {
+      max-width: 1100px;
+      margin: 60px auto 80px;
+      padding: 0 20px;
+      flex-grow: 1;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    section h2 {
+      color: #0b6e4f;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #0b6e4f;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    
+    /* Presentation */
+    #presentation p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin-bottom: 15px;
+    }
+    
+    /* Programme */
+    #programme ul {
+      list-style: inside disc;
+      font-size: 1.1rem;
+      max-width: 700px;
+      color: #444;
+    }
+    
+    /* Galerie */
+    #galerie {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 20px;
+    }
+    #galerie img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    #galerie img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Inscription */
+    #inscription form {
+      max-width: 500px;
+      background: #e6f2ec;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(11,110,79,0.2);
+    }
+    #inscription label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      margin-top: 20px;
+      color: #0b6e4f;
+    }
+    #inscription input, #inscription textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #0b6e4f;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+    #inscription input:focus, #inscription textarea:focus {
+      border-color: #094c35;
+      outline: none;
+    }
+    #inscription button {
+      margin-top: 25px;
+      background-color: #0b6e4f;
+      color: white;
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(11,110,79,0.7);
+      transition: background-color 0.3s ease;
+    }
+    #inscription button:hover {
+      background-color: #094c35;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #0b6e4f;
+      color: white;
+      text-align: center;
+      padding: 20px 15px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      user-select: none;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      main {
+        margin: 40px 15px 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header role="banner" aria-label="Bannière de présentation de l'excursion à Kisatu">
+    <h1>Excursion à Kisatu</h1>
+    <p>Organisée par l'IST/Boma - 15 Décembre 2025</p>
+    <a href="#inscription" class="btn" aria-label="S'inscrire à l'excursion">Réservez votre place</a>
+  </header>
+
+  <main role="main">
+    <section id="presentation" aria-labelledby="presentation-title">
+      <h2 id="presentation-title">Présentation</h2>
+      <p>Kisatu est une destination naturelle magnifique, connue pour ses plages idylliques, sa nature préservée et son ambiance relaxante. Cette excursion est l'occasion parfaite pour les étudiants de l'IST/Boma de se détendre, de découvrir la beauté du Congo et de partager des moments inoubliables entre amis.</p>
+      <p>Le voyage se déroulera le 15 décembre 2025, avec un départ matinal depuis l'IST/Boma. Ne manquez pas cette chance unique de vivre une expérience exceptionnelle hors du cadre scolaire.</p>
+    </section>
+
+    <section id="programme" aria-labelledby="programme-title">
+      <h2 id="programme-title">Programme de l'excursion</h2>
+      <ul>
+        <li>07h00 : Rendez-vous à l'IST/Boma</li>
+        <li>08h00 : Départ vers Kisatu</li>
+        <li>10h30 : Arrivée et installation</li>
+        <li>11h00 : Activités nautiques et détente à la plage</li>
+        <li>13h00 : Déjeuner convivial</li>
+        <li>15h00 : Randonnée et découverte de la nature</li>
+        <li>17h30 : Retour vers Boma</li>
+        <li>19h30 : Arrivée à l'IST/Boma et fin de l'excursion</li>
+      </ul>
+    </section>
+
+    <section id="galerie" aria-label="Galerie photos de Kisatu">
+      <h2>Galerie photos</h2>
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Plage de Kisatu" />
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80" alt="Coucher de soleil à Kisatu" />
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80" alt="Forêt autour de Kisatu" />
+      <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=600&q=80" alt="Activité plage à Kisatu" />
+    </section>
+
+    <section id="inscription" aria-labelledby="inscription-title">
+      <h2 id="inscription-title">Inscription</h2>
+      <form action="https://formsubmit.co/omerphambu@gmail.com" method="POST">
+        <label for="nom">Nom complet *</label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom complet" required />
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="Votre adresse email" required />
+
+        <label for="tel">Téléphone *</label>
+        <input type="tel" id="tel" name="tel" placeholder="Votre numéro de téléphone" required />
+
+        <label for="message">Message (optionnel)</label>
+        <textarea id="message" name="message" rows="4" placeholder="Questions ou remarques"></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    &copy; 2025 IST/Boma - Excursion à Kisatu. Tous droits réservés.
+  </footer>
+
+</body>
+</html>
